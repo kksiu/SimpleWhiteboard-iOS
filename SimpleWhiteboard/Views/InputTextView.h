@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  InputTextView.h
 //  SimpleWhiteboard
 //
 //  Created by Kenneth Siu on 10/11/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface InputTextView : UITextField
 
 @end
-

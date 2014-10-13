@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		9F67645E19EA0E4A0056E26F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67645D19EA0E4A0056E26F /* main.m */; };
 		9F67646119EA0E4A0056E26F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67646019EA0E4A0056E26F /* AppDelegate.m */; };
-		9F67646419EA0E4A0056E26F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67646319EA0E4A0056E26F /* ViewController.m */; };
-		9F67646719EA0E4A0056E26F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F67646519EA0E4A0056E26F /* Main.storyboard */; };
 		9F67646919EA0E4A0056E26F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F67646819EA0E4A0056E26F /* Images.xcassets */; };
-		9F67646C19EA0E4A0056E26F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F67646A19EA0E4A0056E26F /* LaunchScreen.xib */; };
 		9F67647819EA0E4A0056E26F /* SimpleWhiteboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67647719EA0E4A0056E26F /* SimpleWhiteboardTests.m */; };
+		9FD48AB519EB79E1004FA078 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD48AB019EB79E1004FA078 /* DrawViewController.m */; };
+		9FD48AB619EB79E1004FA078 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD48AB219EB79E1004FA078 /* LoginViewController.m */; };
+		9FD48AB719EB79E1004FA078 /* RootNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD48AB419EB79E1004FA078 /* RootNavController.m */; };
+		9FD48ABB19EB79F1004FA078 /* InputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD48ABA19EB79F1004FA078 /* InputTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,18 @@
 		9F67645D19EA0E4A0056E26F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F67645F19EA0E4A0056E26F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F67646019EA0E4A0056E26F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9F67646219EA0E4A0056E26F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9F67646319EA0E4A0056E26F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9F67646619EA0E4A0056E26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F67646819EA0E4A0056E26F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9F67646B19EA0E4A0056E26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9F67646819EA0E4A0056E26F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SimpleWhiteboard/Images.xcassets; sourceTree = "<group>"; };
 		9F67647119EA0E4A0056E26F /* SimpleWhiteboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWhiteboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F67647619EA0E4A0056E26F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F67647719EA0E4A0056E26F /* SimpleWhiteboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWhiteboardTests.m; sourceTree = "<group>"; };
+		9FD48AAF19EB79E1004FA078 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawViewController.h; path = "View Controllers/DrawViewController.h"; sourceTree = "<group>"; };
+		9FD48AB019EB79E1004FA078 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawViewController.m; path = "View Controllers/DrawViewController.m"; sourceTree = "<group>"; };
+		9FD48AB119EB79E1004FA078 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "View Controllers/LoginViewController.h"; sourceTree = "<group>"; };
+		9FD48AB219EB79E1004FA078 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "View Controllers/LoginViewController.m"; sourceTree = "<group>"; };
+		9FD48AB319EB79E1004FA078 /* RootNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootNavController.h; path = "View Controllers/RootNavController.h"; sourceTree = "<group>"; };
+		9FD48AB419EB79E1004FA078 /* RootNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootNavController.m; path = "View Controllers/RootNavController.m"; sourceTree = "<group>"; };
+		9FD48AB919EB79F1004FA078 /* InputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputTextView.h; path = Views/InputTextView.h; sourceTree = "<group>"; };
+		9FD48ABA19EB79F1004FA078 /* InputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputTextView.m; path = Views/InputTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,8 @@
 				9F67645A19EA0E4A0056E26F /* SimpleWhiteboard */,
 				9F67647419EA0E4A0056E26F /* SimpleWhiteboardTests */,
 				9F67645919EA0E4A0056E26F /* Products */,
+				9F67645B19EA0E4A0056E26F /* Supporting Files */,
+				9F67646819EA0E4A0056E26F /* Images.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +88,11 @@
 		9F67645A19EA0E4A0056E26F /* SimpleWhiteboard */ = {
 			isa = PBXGroup;
 			children = (
+				9FD48AAE19EB79AA004FA078 /* Views */,
+				9FD48AAD19EB79A3004FA078 /* Objects */,
+				9FD48AAC19EB799E004FA078 /* View Controllers */,
 				9F67645F19EA0E4A0056E26F /* AppDelegate.h */,
 				9F67646019EA0E4A0056E26F /* AppDelegate.m */,
-				9F67646219EA0E4A0056E26F /* ViewController.h */,
-				9F67646319EA0E4A0056E26F /* ViewController.m */,
-				9F67646519EA0E4A0056E26F /* Main.storyboard */,
-				9F67646819EA0E4A0056E26F /* Images.xcassets */,
-				9F67646A19EA0E4A0056E26F /* LaunchScreen.xib */,
-				9F67645B19EA0E4A0056E26F /* Supporting Files */,
 			);
 			path = SimpleWhiteboard;
 			sourceTree = "<group>";
@@ -100,6 +104,7 @@
 				9F67645D19EA0E4A0056E26F /* main.m */,
 			);
 			name = "Supporting Files";
+			path = SimpleWhiteboard;
 			sourceTree = "<group>";
 		};
 		9F67647419EA0E4A0056E26F /* SimpleWhiteboardTests */ = {
@@ -117,6 +122,35 @@
 				9F67647619EA0E4A0056E26F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FD48AAC19EB799E004FA078 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FD48AAF19EB79E1004FA078 /* DrawViewController.h */,
+				9FD48AB019EB79E1004FA078 /* DrawViewController.m */,
+				9FD48AB119EB79E1004FA078 /* LoginViewController.h */,
+				9FD48AB219EB79E1004FA078 /* LoginViewController.m */,
+				9FD48AB319EB79E1004FA078 /* RootNavController.h */,
+				9FD48AB419EB79E1004FA078 /* RootNavController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9FD48AAD19EB79A3004FA078 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		9FD48AAE19EB79AA004FA078 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FD48AB919EB79F1004FA078 /* InputTextView.h */,
+				9FD48ABA19EB79F1004FA078 /* InputTextView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F67646719EA0E4A0056E26F /* Main.storyboard in Resources */,
-				9F67646C19EA0E4A0056E26F /* LaunchScreen.xib in Resources */,
 				9F67646919EA0E4A0056E26F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F67646419EA0E4A0056E26F /* ViewController.m in Sources */,
+				9FD48AB619EB79E1004FA078 /* LoginViewController.m in Sources */,
+				9FD48AB519EB79E1004FA078 /* DrawViewController.m in Sources */,
+				9FD48ABB19EB79F1004FA078 /* InputTextView.m in Sources */,
 				9F67646119EA0E4A0056E26F /* AppDelegate.m in Sources */,
 				9F67645E19EA0E4A0056E26F /* main.m in Sources */,
+				9FD48AB719EB79E1004FA078 /* RootNavController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,25 +277,6 @@
 			targetProxy = 9F67647219EA0E4A0056E26F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9F67646519EA0E4A0056E26F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F67646619EA0E4A0056E26F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9F67646A19EA0E4A0056E26F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F67646B19EA0E4A0056E26F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9F67647919EA0E4A0056E26F /* Debug */ = {
@@ -414,6 +430,7 @@
 				9F67647D19EA0E4A0056E26F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F67647E19EA0E4A0056E26F /* Build configuration list for PBXNativeTarget "SimpleWhiteboardTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +439,7 @@
 				9F67648019EA0E4A0056E26F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

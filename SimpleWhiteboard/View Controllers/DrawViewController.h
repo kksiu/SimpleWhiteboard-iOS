@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  DrawViewController.h
 //  SimpleWhiteboard
 //
 //  Created by Kenneth Siu on 10/11/14.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-//window for the app
-@property (strong, nonatomic) UIWindow *window;
-
+@interface DrawViewController : UIViewController
 
 @end
-
