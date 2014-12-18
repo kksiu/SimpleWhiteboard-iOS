@@ -26,6 +26,8 @@
     //alloc view and show log in menu
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
     //have a text view for username and for password
     float widthPadding = [self.view frame].size.width / 9;
     float height = [self.view frame].size.height / 15;

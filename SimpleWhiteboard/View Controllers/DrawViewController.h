@@ -10,4 +10,7 @@
 
 @interface DrawViewController : UIViewController
 
+@property UIImageView *tempDrawImage;
+@property UIImageView *mainImage;
+
 @end

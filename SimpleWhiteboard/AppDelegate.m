@@ -23,8 +23,6 @@
     
     self.window.rootViewController = [[RootNavController alloc] init];
     
-    
-    
     [self.window makeKeyAndVisible];
     
     return YES;
