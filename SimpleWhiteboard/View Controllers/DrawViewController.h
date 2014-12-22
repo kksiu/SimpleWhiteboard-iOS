@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ACEDrawingView.h"
 
 @interface DrawViewController : UIViewController
 
-@property UIImageView *tempDrawImage;
-@property UIImageView *mainImage;
+//drawing view
+@property ACEDrawingView *drawView;
+
+//used to send the button to Imgur location
+@property UIButton *sendButton;
 
 @end
