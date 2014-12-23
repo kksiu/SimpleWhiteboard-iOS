@@ -12,6 +12,7 @@
 		9F67646119EA0E4A0056E26F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67646019EA0E4A0056E26F /* AppDelegate.m */; };
 		9F67646919EA0E4A0056E26F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F67646819EA0E4A0056E26F /* Images.xcassets */; };
 		9F67647819EA0E4A0056E26F /* SimpleWhiteboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F67647719EA0E4A0056E26F /* SimpleWhiteboardTests.m */; };
+		9F8292161A48E6400098BC66 /* SecretKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8292151A48E6400098BC66 /* SecretKeys.m */; };
 		9FB0CC0E1A48DC15006FAFA8 /* ACEDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0CBCD1A48DC15006FAFA8 /* ACEDrawingTools.m */; };
 		9FB0CC0F1A48DC15006FAFA8 /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0CBCF1A48DC15006FAFA8 /* ACEDrawingView.m */; };
 		9FB0CC101A48DC15006FAFA8 /* IMGResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0CBD21A48DC15006FAFA8 /* IMGResponseSerializer.m */; };
@@ -70,6 +71,8 @@
 		9F67647119EA0E4A0056E26F /* SimpleWhiteboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWhiteboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F67647619EA0E4A0056E26F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F67647719EA0E4A0056E26F /* SimpleWhiteboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWhiteboardTests.m; sourceTree = "<group>"; };
+		9F8292141A48E6400098BC66 /* SecretKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretKeys.h; sourceTree = "<group>"; };
+		9F8292151A48E6400098BC66 /* SecretKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretKeys.m; sourceTree = "<group>"; };
 		9FB0CBCC1A48DC15006FAFA8 /* ACEDrawingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingTools.h; sourceTree = "<group>"; };
 		9FB0CBCD1A48DC15006FAFA8 /* ACEDrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingTools.m; sourceTree = "<group>"; };
 		9FB0CBCE1A48DC15006FAFA8 /* ACEDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingView.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 				9FD48AAC19EB799E004FA078 /* View Controllers */,
 				9F67645F19EA0E4A0056E26F /* AppDelegate.h */,
 				9F67646019EA0E4A0056E26F /* AppDelegate.m */,
+				9F8292141A48E6400098BC66 /* SecretKeys.h */,
+				9F8292151A48E6400098BC66 /* SecretKeys.m */,
 			);
 			path = SimpleWhiteboard;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				TargetAttributes = {
 					9F67645719EA0E4A0056E26F = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9RSGCSU935;
 					};
 					9F67647019EA0E4A0056E26F = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -522,6 +528,7 @@
 				9FB0CC141A48DC15006FAFA8 /* IMGAlbum.m in Sources */,
 				9FB0CC261A48DC15006FAFA8 /* IMGConversationRequest.m in Sources */,
 				9FB0CC241A48DC15006FAFA8 /* IMGAlbumRequest.m in Sources */,
+				9F8292161A48E6400098BC66 /* SecretKeys.m in Sources */,
 				9FB0CC281A48DC15006FAFA8 /* IMGGalleryRequest.m in Sources */,
 				9FB0CC231A48DC15006FAFA8 /* IMGAccountRequest.m in Sources */,
 				9F67646119EA0E4A0056E26F /* AppDelegate.m in Sources */,

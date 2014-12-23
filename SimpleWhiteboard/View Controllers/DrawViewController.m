@@ -7,6 +7,9 @@
 //
 
 #import "DrawViewController.h"
+#import "SecretKeys.h"
+#import "IMGImage.h"
+#import "IMGImageRequest.h"
 
 @interface DrawViewController ()
 
@@ -39,9 +42,29 @@
     [self.sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.view addSubview:self.sendButton];
     
+    //when send button is selected, upload to imgur
+    [self.sendButton addTarget:self action:@selector(sendButtonPressed:) forControlEvents:UIControlEventTouchDown];
+    
+    //set up draw view
     self.drawView = [[ACEDrawingView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.sendButton.frame.origin.y)];
     
     [self.view addSubview:self.drawView];
+    
+    //session
+    [IMGSession anonymousSessionWithClientID:[SecretKeys getImgurClientID] withDelegate:self];
+}
+
+
+//action when the send button has been pressed, upload image to imgur
+-(IBAction)sendButtonPressed:(id)sender {
+    
+    NSData* dataToSend = UIImagePNGRepresentation(self.drawView.image);
+    
+    [IMGImageRequest uploadImageWithData:dataToSend title:@"Note!" success:^(IMGImage* sentImage) {
+        NSLog(@"%@", [sentImage.url absoluteString]); }
+                                progress:nil failure:^(NSError* error) {
+                                    NSLog(@"ERROR");
+                                }];
 }
 
 - (void)didReceiveMemoryWarning {

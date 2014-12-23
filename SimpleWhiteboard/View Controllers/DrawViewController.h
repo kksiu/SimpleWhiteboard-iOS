@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ACEDrawingView.h"
+#import "IMGSession.h"
 
-@interface DrawViewController : UIViewController
+@interface DrawViewController : UIViewController <IMGSessionDelegate>
 
 //drawing view
 @property ACEDrawingView *drawView;
