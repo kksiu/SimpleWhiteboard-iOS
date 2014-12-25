@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
 #import "ACEDrawingView.h"
 #import "IMGSession.h"
 
@@ -17,5 +18,14 @@
 
 //used to send the button to Imgur location
 @property UIButton *sendButton;
+
+//firebase variable
+@property Firebase *firebase;
+
+//user id that is specific to the current user
+@property NSString *uid;
+
+//sessionID for facebook
+@property NSString *sessionID;
 
 @end

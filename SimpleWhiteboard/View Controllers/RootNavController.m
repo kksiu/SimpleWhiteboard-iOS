@@ -24,7 +24,7 @@
     
     
     //now that initializing is done, set the view controller to the login view
-    [self setViewControllers:@[drawVC]];
+    [self setViewControllers:@[logVC]];
 }
 
 - (void)didReceiveMemoryWarning {

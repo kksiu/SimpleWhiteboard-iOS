@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+		<meta charset="UTF-8">
+		<title>Notes</title>
+	</head>
+
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.fit { /* set relative picture size */
+			max-width: 100%;
+			max-height: 100%;
+		}
+		.center {
+			display: block;
+			margin: auto;
+		}
+	</style>
+
+	<body>
+
+		<img class="center fit" id="imageID" src="No_Image.png" alt="Image Here!">
+
+		<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+		<script>
+
+			var uid = "";
+
+			function resize_image() {
+				var wh = $(window).height();
+    			$('body').height(wh);
+			}
+
+			//bind the resizing of window to resizing image as well
+			$(window).bind('resize', function() { resize_image(); });
+
+			var rootRef = new Firebase("https://simplewhiteboard.firebaseio.com");
+
+			rootRef.authWithOAuthPopup("facebook", function(error, authData) {
+				
+				if(error == null) {
+					console.log("Logged in properly!");
+				} else {
+					console.log("Error: " + error);
+				}
+
+				uid = authData.uid;
+
+				var userRef = rootRef.child(uid);
+
+				//change image based on imgur link
+				userRef.on("value", function(snapshot) {
+					var dictionary = snapshot.val();
+
+					if(dictionary == null || dictionary.image == null) {
+						console.log("No image has been uploaded yet!");
+						return;
+					}
+
+					var imageURL = dictionary.image.replace(/^http:\/\//i, 'https://');
+					document.getElementById("imageID").src = imageURL;
+					resize_image();
+				}, function (errorObject) {
+					console.log("The read failed: " + errorObject.code);
+				});
+			}, {
+				remember: "sessionOnly"
+			});
+
+		</script>
+	</body>
+</html>

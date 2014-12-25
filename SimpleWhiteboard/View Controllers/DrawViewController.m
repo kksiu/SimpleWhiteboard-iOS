@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kenneth Siu. All rights reserved.
 //
 
+#import <FacebookSDK/FacebookSDK.h>
 #import "DrawViewController.h"
 #import "SecretKeys.h"
 #import "IMGImage.h"
@@ -52,6 +53,22 @@
     
     //session
     [IMGSession anonymousSessionWithClientID:[SecretKeys getImgurClientID] withDelegate:self];
+    
+    //init firebase
+    self.firebase = [[Firebase alloc] initWithUrl:@"https://simplewhiteboard.firebaseio.com"];
+    
+    //session ID has been retrieved so you can use it with firebase
+    [self.firebase authWithOAuthProvider:@"facebook" token:self.sessionID
+                withCompletionBlock:^(NSError *error, FAuthData *authData) {
+                    if (error) {
+                        NSLog(@"Login failed. %@", error);
+                    } else {
+                        NSLog(@"Logged in!");
+                        
+                        //get the uid and store it
+                        self.uid = [authData.auth objectForKey:@"uid"];
+                    }
+                }];
 }
 
 
@@ -60,11 +77,34 @@
     
     NSData* dataToSend = UIImagePNGRepresentation(self.drawView.image);
     
-    [IMGImageRequest uploadImageWithData:dataToSend title:@"Note!" success:^(IMGImage* sentImage) {
-        NSLog(@"%@", [sentImage.url absoluteString]); }
-                                progress:nil failure:^(NSError* error) {
-                                    NSLog(@"ERROR");
-                                }];
+    [IMGImageRequest uploadImageWithData:dataToSend
+                                   title:@"Note!"
+                                 success:^(IMGImage* sentImage) {
+                                     [self imageUploaded:sentImage];
+                                 }
+                                progress:nil
+                                 failure:^(NSError* error) {
+                                     [self imageFailedToUpload:error];
+                                 }];
+}
+
+-(void) imageUploaded:(IMGImage*)image {
+    //now that image has been uploaded, set it in firebase
+    
+    //check to see if user id is nil
+    if(self.uid == nil) {
+        //return since needs a user
+        return;
+    }
+    
+    NSDictionary *userDictionary = @{@"image" : [image.url absoluteString] };
+    [self.firebase setValue:@{self.uid : userDictionary} withCompletionBlock:^(NSError *error, Firebase *ref) {
+    
+    }];
+}
+
+-(void) imageFailedToUpload:(NSError*)error {
+    
 }
 
 - (void)didReceiveMemoryWarning {

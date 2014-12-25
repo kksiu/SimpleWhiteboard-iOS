@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootNavController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()
 
@@ -26,6 +27,10 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

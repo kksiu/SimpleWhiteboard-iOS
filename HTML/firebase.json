@@ -1,0 +1,9 @@
+{
+  "firebase": "simplewhiteboard",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

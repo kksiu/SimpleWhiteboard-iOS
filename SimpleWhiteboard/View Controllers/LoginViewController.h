@@ -14,8 +14,7 @@
 @property InputTextView *userField;
 @property InputTextView *passField;
 
-@property UIButton *logInButton;
-@property UIButton *regButton;
+@property UIButton *logInFacebook;
 
 @end
 
