@@ -11,13 +11,10 @@
 #import "ACEDrawingView.h"
 #import "IMGSession.h"
 
-@interface DrawViewController : UIViewController <IMGSessionDelegate>
+@interface DrawViewController : UIViewController <IMGSessionDelegate, UIActionSheetDelegate>
 
 //drawing view
 @property ACEDrawingView *drawView;
-
-//used to send the button to Imgur location
-@property UIButton *sendButton;
 
 //firebase variable
 @property Firebase *firebase;
@@ -41,14 +38,15 @@
 @property CGFloat fullLineWidth;
 
 //color alert view
-@property UIAlertView *colorAlertView;
+@property UIActionSheet *colorSelectView;
 
 //color array
-@property NSArray *colorArray;
+@property NSDictionary *colorArray;
 
 //type alert view
-@property UIAlertView *typeAlertView;
+@property UIActionSheet *typeSelectView;
 
-
+//type array
+@property NSDictionary *typeArray;
 
 @end

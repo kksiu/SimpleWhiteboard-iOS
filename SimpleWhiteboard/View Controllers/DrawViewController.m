@@ -34,22 +34,6 @@
     //get the drawing context
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    //button to send the image
-//    float startHeightOfSendbutton = self.view.frame.size.height / (20.f);
-//    float startWidthOfSendbutton = self.view.frame.size.width * (9.f / 10.f);
-//    float heightOfSendbutton = self.view.frame.size.height / 20.0f;
-//    
-//    self.sendButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    
-//    self.sendButton.frame = CGRectMake(startWidthOfSendbutton, startHeightOfSendbutton, self.view.frame.size.width - startWidthOfSendbutton, heightOfSendbutton);
-//    
-//    [self.sendButton setTitle:@"Send!" forState:UIControlStateNormal];
-//    [self.sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [self.sendButton setBackgroundColor:[UIColor blueColor]];
-//    
-//    [self.view addSubview:self.sendButton];
-    
-    
     //set up width slider
     float sliderHeight = self.view.frame.size.height / 15.f;
     self.widthSlider = [[UISlider alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 4.f, self.view.frame.size.height -  sliderHeight, self.view.frame.size.width / (2.f), sliderHeight)];
@@ -57,9 +41,6 @@
     [self.widthSlider setHidden:YES];
     [self.widthSlider setValue:0.5f];
     [self.view addSubview:self.widthSlider];
-    
-    //when send button is selected, upload to imgur
-    [self.sendButton addTarget:self action:@selector(sendButtonPressed:) forControlEvents:UIControlEventTouchDown];
     
     //set up toolbar
     self.toolbarArray = [[NSMutableArray alloc] init];
@@ -122,12 +103,39 @@
     
     [self.view addSubview:self.drawView];
     
-    //set up the alert views
-    self.colorArray = @[@"Black", @"Red", @"Orange", @"Yellow", @"Green", @"Blue", @"Purple", @"Brown", @"Gray", @"Pink"];
-    self.colorAlertView = [[UIAlertView alloc] initWithTitle:@"Select Color" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    //set up the action sheet views
+    self.colorArray = @{@"Black" : [UIColor blackColor],
+                        @"Red" : [UIColor redColor],
+                        @"Orange" : [UIColor orangeColor],
+                        @"Yellow" : [UIColor yellowColor],
+                        @"Green" : [UIColor greenColor],
+                        @"Blue" : [UIColor blueColor],
+                        @"Purple" : [UIColor purpleColor],
+                        @"Brown" : [UIColor brownColor],
+                        @"Gray" : [UIColor grayColor],
+                        @"Pink" : [UIColor colorWithRed:1.f green:0.753f blue:0.796f alpha:1.f]
+                        };
     
-    for(NSString *color in self.colorArray) {
-        [self.colorAlertView addButtonWithTitle:color];
+    self.colorSelectView = [[UIActionSheet alloc] initWithTitle:@"Color Select" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles: nil];
+    
+    for(NSString *color in [self.colorArray allKeys]) {
+        [self.colorSelectView addButtonWithTitle:color];
+    }
+    
+    self.typeArray = @{@"Pen" : [NSNumber numberWithInt:ACEDrawingToolTypePen],
+                       @"Eraser" : [NSNumber numberWithInt:ACEDrawingToolTypeEraser],
+                       @"Text" : [NSNumber numberWithInt:ACEDrawingToolTypeText],
+                       @"Line" : [NSNumber numberWithInt:ACEDrawingToolTypeLine],
+                       @"Rectangle (stroke)" : [NSNumber numberWithInt:ACEDrawingToolTypeRectagleStroke],
+                       @"Rectangle (fill)" : [NSNumber numberWithInt:ACEDrawingToolTypeRectagleFill],
+                       @"Ellipse (stroke)" : [NSNumber numberWithInt:ACEDrawingToolTypeEllipseStroke],
+                       @"Eliipse (fill)" : [NSNumber numberWithInt:ACEDrawingToolTypeEllipseFill]
+                       };
+    
+    self.typeSelectView = [[UIActionSheet alloc] initWithTitle:@"Type Select" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles: nil];
+    
+    for(NSString *type in [self.typeArray allKeys]) {
+        [self.typeSelectView addButtonWithTitle:type];
     }
     
     //set the full allowable line width of the draw view
@@ -158,11 +166,11 @@
 #pragma mark Toolbar Selectors
 
 -(IBAction)colorSelected:(id)sender {
-    [self.colorAlertView show];
+    [self.colorSelectView showFromBarButtonItem:sender animated:YES];
 }
 
 -(IBAction)typeSelected:(id)sender {
-    
+    [self.typeSelectView showFromBarButtonItem:sender animated:YES];
 }
 
 -(IBAction)widthSelected:(id)sender {
@@ -179,6 +187,21 @@
 
 -(IBAction)redoSelected:(id)sender {
     [self.drawView redoLatestStep];
+}
+
+- (void)willPresentAlertView:(UIAlertView *)alertView {
+    [self.colorSelectView setFrame:CGRectMake(1, 20, 2700, 400)];
+}
+
+#pragma mark action sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *key = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if([actionSheet isEqual:self.colorSelectView]) {
+        [self.drawView setLineColor:[self.colorArray objectForKey:key]];
+    } else if([actionSheet isEqual:self.typeSelectView]) {
+        [self.drawView setDrawTool:[(NSNumber*)[self.typeArray objectForKey:key] intValue]];
+    }
 }
 
 #pragma mark Other Selectors
