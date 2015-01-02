@@ -28,4 +28,27 @@
 //sessionID for facebook
 @property NSString *sessionID;
 
+//array of buttons in the ui toolbar
+@property NSMutableArray *toolbarArray;
+
+//toolbar
+@property UIToolbar* toolbar;
+
+//slider for width
+@property UISlider* widthSlider;
+
+//get the full line width allowed
+@property CGFloat fullLineWidth;
+
+//color alert view
+@property UIAlertView *colorAlertView;
+
+//color array
+@property NSArray *colorArray;
+
+//type alert view
+@property UIAlertView *typeAlertView;
+
+
+
 @end
