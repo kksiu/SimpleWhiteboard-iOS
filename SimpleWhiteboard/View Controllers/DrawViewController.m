@@ -189,10 +189,6 @@
     [self.drawView redoLatestStep];
 }
 
-- (void)willPresentAlertView:(UIAlertView *)alertView {
-    [self.colorSelectView setFrame:CGRectMake(1, 20, 2700, 400)];
-}
-
 #pragma mark action sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *key = [actionSheet buttonTitleAtIndex:buttonIndex];
